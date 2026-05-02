@@ -129,8 +129,6 @@ read -p "是否立即重启系统（使 BBRv3 生效）？(y/N): " choice
 if [[ "$choice" =~ ^[Yy]$ ]]; then
     echo -e "${YELLOW}系统将在 5 秒后重启...${NC}"
     sleep 5
-    # 重启 SSH（新端口生效）
-    systemctl restart ssh
     reboot
 else
     echo -e "${YELLOW}请稍后手动执行 reboot${NC}"
